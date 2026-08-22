@@ -29,3 +29,207 @@ button{font:inherit;color:inherit;border:0}
 .playlist-section{text-align:center}.player{width:min(520px,100%);margin:35px auto;padding:30px 24px;border-radius:24px}.album-art{width:145px;height:145px;margin:20px auto;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:58px;background:radial-gradient(circle,#d77aa4,#71324f);box-shadow:0 0 40px rgba(239,143,186,.35)}.player h3{font-size:34px}.player>p:not(.now-playing){color:#bda0ae;font-size:12px}.progress-wrap{margin:25px 0}.progress-wrap input{width:100%;accent-color:#ef8fba}.time-row{display:flex;justify-content:space-between;color:#a98495;font-size:10px}.player-controls{display:flex;align-items:center;justify-content:center;gap:35px;margin:20px}.player-controls button{background:none;font-size:20px;cursor:pointer}.player-controls .play{width:62px;height:62px;border-radius:50%;background:#ef8fba;color:#4b1b2e}.playlist{text-align:left;border-top:1px solid var(--line);padding-top:10px}.track{display:flex;justify-content:space-between;padding:14px 10px;border-radius:12px;cursor:pointer}.track.active{background:rgba(239,143,186,.08)}.track small{color:#9d7c8b}.music-float{position:fixed;right:20px;bottom:20px;width:55px;height:55px;border-radius:50%;background:#ef8fba;color:#3b1727;z-index:40;font-size:22px}
 .ending-section{text-align:center;min-height:80vh}.end-flowers{font-size:28px;margin:30px}.ending-section>p:not(.eyebrow):not(.signature){max-width:650px;margin:25px auto;color:#c5a9b6;font-size:14px}.signature{font:28px Parisienne,cursive;color:#efabc8;margin-top:50px}
 @media(max-width:600px){.section{padding:90px 18px}.keypad button{height:58px}.paper{padding:30px 20px;font-size:18px}.bouquet-stage{height:430px}.photo-stack{height:590px}.polaroid{width:270px}.p-left{left:0}.p-right{right:0}.p-center{top:390px}.describe-card,.story-card{padding:24px}.describe-card h3,.story-card h3{font-size:31px}}
+/* =====================================
+   DIGITAL BOUQUET
+===================================== */
+
+.bouquet-container {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  height: 470px;
+  margin: 40px auto 20px;
+}
+
+/* VASE */
+
+.vase {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 145px;
+  height: 150px;
+  z-index: 5;
+}
+
+.vase-neck {
+  position: absolute;
+  top: 0;
+  left: 38px;
+  width: 69px;
+  height: 35px;
+  background: linear-gradient(
+    90deg,
+    #e57caf,
+    #f29bc5,
+    #d96b9e
+  );
+  border-radius: 15px 15px 8px 8px;
+}
+
+.vase-body {
+  position: absolute;
+  top: 25px;
+  left: 5px;
+  width: 135px;
+  height: 120px;
+  background: linear-gradient(
+    135deg,
+    #e781b0,
+    #f09ac5,
+    #d86d9d
+  );
+  border-radius: 15px 15px 40px 40px;
+  box-shadow:
+    inset 8px 0 15px rgba(255,255,255,.18),
+    0 12px 30px rgba(0,0,0,.18);
+}
+
+/* FLOWERS */
+
+.bouquet-flower {
+  position: absolute;
+  bottom: 115px;
+  left: 50%;
+  width: 50px;
+  height: 270px;
+  transform-origin: bottom center;
+  z-index: 3;
+}
+
+.flower-head {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 45px;
+  z-index: 3;
+  filter: drop-shadow(0 5px 8px rgba(0,0,0,.15));
+}
+
+.stem {
+  position: absolute;
+  top: 38px;
+  left: 50%;
+  width: 6px;
+  height: 235px;
+  background: #69a56d;
+  border-radius: 10px;
+  transform: translateX(-50%) rotate(-4deg);
+}
+
+/* posisi masing-masing bunga */
+
+.flower-1 {
+  transform: translateX(-50%) rotate(-27deg);
+  height: 270px;
+}
+
+.flower-2 {
+  transform: translateX(-50%) rotate(-16deg);
+  height: 300px;
+}
+
+.flower-3 {
+  transform: translateX(-50%) rotate(-7deg);
+  height: 250px;
+}
+
+.flower-4 {
+  transform: translateX(-50%) rotate(8deg);
+  height: 285px;
+}
+
+.flower-5 {
+  transform: translateX(-50%) rotate(18deg);
+  height: 300px;
+}
+
+.flower-6 {
+  transform: translateX(-50%) rotate(29deg);
+  height: 265px;
+}
+
+/* efek goyang lembut */
+
+.bouquet-flower {
+  animation: flowerSway 4s ease-in-out infinite;
+}
+
+.flower-2 {
+  animation-delay: .5s;
+}
+
+.flower-3 {
+  animation-delay: 1s;
+}
+
+.flower-4 {
+  animation-delay: 1.5s;
+}
+
+.flower-5 {
+  animation-delay: 2s;
+}
+
+.flower-6 {
+  animation-delay: 2.5s;
+}
+
+@keyframes flowerSway {
+
+  0%,100% {
+    margin-left: 0;
+  }
+
+  50% {
+    margin-left: 4px;
+  }
+
+}
+
+/* MESSAGE */
+
+.bouquet-message {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: calc(100% - 45px);
+  max-width: 380px;
+  padding: 30px 25px;
+  background: rgba(55, 18, 39, .95);
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 25px;
+  z-index: 9999;
+  text-align: center;
+  box-shadow: 0 20px 70px rgba(0,0,0,.4);
+  backdrop-filter: blur(15px);
+}
+
+.bouquet-message.hidden {
+  display: none;
+}
+
+#bouquetFlowerIcon {
+  font-size: 55px;
+  margin-bottom: 15px;
+}
+
+#bouquetMessageText {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+#closeBouquetMessage {
+  position: absolute;
+  right: 15px;
+  top: 10px;
+  border: none;
+  background: transparent;
+  color: white;
+  font-size: 28px;
+  cursor: pointer;
+  }
