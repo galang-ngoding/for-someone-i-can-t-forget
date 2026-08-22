@@ -84,9 +84,9 @@ $("#shakeJar").addEventListener("click",shakeJar);jar.addEventListener("click",s
 
 /* playlist - put files in assets/music1.mp3, music2.mp3, music3.mp3 */
 const songs=[
- {title:"Shape of my heart",artist:"Backstreet Boys",file:"assets/music1.mp3",icon:"🌷"},
+ {title:"Love",artist:"Wave to earth",file:"assets/music1.mp3",icon:"🌷"},
  {title:"Seasons",artist:"Wave to earth",file:"assets/music2.mp3",icon:"🌸"},
- {title:"Love",artist:"Wave to earth",file:"assets/music3.mp3",icon:"🌹"}
+ {title:"Shape of my heart",artist:"Backstreet Boys",file:"assets/music3.mp3",icon:"🌹"}
 ];
 let current=0,playing=false;
 const audio=$("#audio"),playPause=$("#playPause"),progress=$("#progress"),albumArt=$("#albumArt"),songTitle=$("#songTitle"),songArtist=$("#songArtist"),playlist=$("#playlist");
