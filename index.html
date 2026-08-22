@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#321622">
+  <title>This One's For You, Wandira</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Parisienne&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating background flowers -->
+  <div id="petalLayer" aria-hidden="true"></div>
+
+  <!-- LOADING -->
+  <section id="loadingScreen" class="screen loading-screen">
+    <div class="loading-flower">🌸</div>
+    <p>Loading something I made for you...</p>
+  </section>
+
+  <!-- PASSWORD -->
+  <section id="lockScreen" class="screen lock-screen hidden">
+    <div class="lock-card glass">
+      <div class="top-flower">🌷</div>
+      <h1>A Little Message<br>From Someone<br>Who Misses You</h1>
+      <p class="muted">Enter the secret code 🌸</p>
+
+      <div id="dots" class="dots"></div>
+
+      <div class="keypad">
+        <button data-key="1">1</button><button data-key="2">2</button><button data-key="3">3</button>
+        <button data-key="4">4</button><button data-key="5">5</button><button data-key="6">6</button>
+        <button data-key="7">7</button><button data-key="8">8</button><button data-key="9">9</button>
+        <button data-key="clear">×</button><button data-key="0">0</button><button data-key="enter">↵</button>
+      </div>
+
+      <p class="hint">Hint: your birthday 💗</p>
+      <p id="wrongCode" class="wrong-code"></p>
+    </div>
+  </section>
+
+  <!-- LETTER SURPRISE -->
+  <section id="letterScreen" class="letter-screen hidden">
+    <div class="envelope-wrap">
+      <p class="tiny-label">A LITTLE SOMETHING FOR YOU</p>
+
+      <button id="envelope" class="envelope" aria-label="Open the letter">
+        <div class="envelope-back"></div>
+        <div class="letter-paper">
+          <span>For Wandira</span>
+          <small>open me ♡</small>
+        </div>
+        <div class="envelope-flap"></div>
+        <div class="envelope-front"></div>
+      </button>
+
+      <p id="envelopeHint" class="envelope-hint">Tap the letter to open it 💌</p>
+    </div>
+
+    <article id="openingLetter" class="opening-letter glass hidden">
+      <p class="script">Dear Wandira,</p>
+      <p>There are some things that are easier to write than to say out loud.</p>
+      <p>I don't know where this feeling will take me, but I know I still miss you more than I probably should.</p>
+      <p>So before you continue, I just want you to know that this little website was made because you still mean something to me.</p>
+      <button id="continueButton" class="pink-button">Continue ♡</button>
+    </article>
+  </section>
+
+  <!-- MAIN -->
+  <main id="mainContent" class="hidden">
+
+    <!-- HERO -->
+    <section class="hero section">
+      <p class="eyebrow">FROM MY HEART TO YOURS</p>
+      <h1>This One’s<br><em>For You,</em><br>Wandira</h1>
+      <div class="divider"></div>
+      <!-- Replace this paragraph when you send the final English text -->
+      <p class="hero-copy">Some feelings don't disappear just because time passes. Some people stay quietly in your thoughts, and somehow, you're still one of them.</p>
+      <p class="scroll-note">scroll slowly ↓</p>
+    </section>
+
+    <!-- DIGITAL BOUQUET -->
+    <section class="section bouquet-section">
+      <p class="eyebrow">MY FIRST LITTLE GIFT</p>
+      <h2>Digital Bouquet</h2>
+      <p class="subtitle">Setiap bunga menyimpan pesan kecilku untukmu 🌸</p>
+
+      <div class="bouquet-stage">
+        <div class="floating-flower f1" data-message="Senyummu seperti bunga matahari, selalu punya cara untuk membawa sedikit cahaya ke hari yang kelabu.">🌻</div>
+        <div class="floating-flower f2" data-message="Parasmu seperti bunga mawar, indah tanpa perlu banyak alasan untuk dikagumi.">🌹</div>
+        <div class="floating-flower f3" data-message="Tatapanmu seperti bunga teratai, tenang, lembut, tapi meninggalkan kesan yang dalam.">🪷</div>
+        <div class="floating-flower f4" data-message="Tawamu seperti bunga sakura, singkat tapi selalu berhasil membuat suasana terasa lebih indah.">🌸</div>
+        <div class="floating-flower f5" data-message="Hatimu seperti bunga lily, sederhana, tulus, dan punya keindahan yang nggak dibuat-buat.">🌷</div>
+        <div class="floating-flower f6" data-message="Ada banyak hal kecil tentangmu yang mungkin biasa saja bagimu, tapi selalu berhasil membuatku tersenyum. 💗">💐</div>
+
+        <div class="vase">
+          <span class="stem s1"></span><span class="stem s2"></span><span class="stem s3"></span>
+          <span class="stem s4"></span><span class="stem s5"></span>
+          <div class="vase-neck"></div><div class="vase-body"></div>
+        </div>
+      </div>
+
+      <div id="flowerMessage" class="message-box hidden"></div>
+      <p class="tap-note">tap a flower ✿</p>
+    </section>
+
+    <!-- LONG LETTER -->
+    <section class="section letter-section">
+      <p class="eyebrow">THE THINGS I NEVER SAID</p>
+      <h2>Dear Wandira</h2>
+      <article class="paper">
+        <p>Kadang aku sendiri masih nggak nyangka kalau ternyata rasa ini udah selama ini. Kalau diingat-ingat lagi, semuanya berawal dari kelas 7. Waktu itu kita masih sering ngobrol, masih sering dekat, bahkan sempat ada masa di mana hubungan kita bisa dibilang HTS. Mungkin waktu itu aku belum sadar kalau rasa suka yang awalnya cuma sederhana ternyata bakal bertahan sampai bertahun-tahun.</p>
+        <p>Sampai akhirnya kita naik kelas 8.</p>
+        <p>Kita mulai beda kelas, dan sejak saat itu hubungan kita juga perlahan berubah. Yang tadinya sering ngobrol, lama-lama jadi makin jarang. Yang tadinya dekat, perlahan jadi terasa jauh. Bukan karena aku udah nggak peduli sama kamu, malah mungkin karena saat itu aku terlalu banyak mikir.</p>
+        <p>Aku masih suka sama kamu, tapi aku nggak tahu harus gimana.</p>
+        <p>Akhirnya aku memilih buat diam.</p>
+        <p>Aku cuma bisa memperhatikan kamu dari jauh. Kadang cuma lihat kamu dari kejauhan, kadang cuma berpapasan sebentar. Sebenarnya aku pengen nyapa, pengen ngobrol lagi kayak dulu, tapi selalu ada rasa takut kalau aku malah ganggu kamu atau bikin semuanya jadi awkward.</p>
+        <p>Jadi ya... aku memilih buat <em>keep it to myself.</em></p>
+        <p>Kalau dipikir-pikir sekarang, mungkin aku memang sedikit bodoh. Bukan karena aku suka sama kamu, tapi karena aku terlalu takut buat mengambil langkah. Aku terlalu sibuk mikirin kemungkinan buruk sampai akhirnya nggak pernah benar-benar mencoba.</p>
+        <p>Dan lucunya, dulu aku pikir kalau aku terus diam, lama-lama rasa ini bakal hilang sendiri.</p>
+        <p>Ternyata nggak.</p>
+        <p>Sampai lulus SMP pun aku masih belum bisa benar-benar move on dari kamu.</p>
+        <p>Waktu itu aku cuma punya satu harapan kecil, semoga kita bisa ketemu lagi di SMA yang sama. Dan pas akhirnya aku tahu kalau kita benar-benar masuk SMA yang sama, aku jujur senang banget.</p>
+        <p>Mungkin kedengarannya sepele, tapi buat aku, tahu kalau aku masih bisa ketemu kamu lagi aja udah bikin senang.</p>
+        <p>Walaupun ternyata kita beda kelas lagi.</p>
+        <p>Tapi nggak apa-apa. Aku tetap nyimpen perasaan itu. Aku tetap mengagumi kamu, walaupun cuma dari tempatku sendiri.</p>
+        <p>Mungkin karena sampai saat itu aku masih merasa belum pantas buat berdiri di samping kamu. Aku sering ngerasa masih banyak hal dalam diriku yang harus diperbaiki sebelum aku bisa benar-benar mendekati kamu lagi.</p>
+        <p>Dan selama itu juga, aku sadar kalau ternyata aku bisa cemburu.</p>
+        <p>Setiap kali lihat kamu dekat sama cowok lain, kadang ada rasa nggak enak yang muncul. Apalagi kalau cowok itu temanku sendiri.</p>
+        <p>Aku tahu aku sebenarnya nggak punya hak buat cemburu. Kita bukan siapa-siapa, dan kamu bebas berteman atau dekat sama siapa pun yang kamu mau.</p>
+        <p>Jadi biasanya aku cuma bisa diam.</p>
+        <p>Berusaha biasa aja, senyum seperti nggak terjadi apa-apa, padahal di dalam hati ya... nggak sebiasa itu.</p>
+        <p>Sekarang kita udah naik kelas 11. Dan honestly, aku senang banget pas tahu kelas kita akhirnya sebelahan.</p>
+        <p>Memang kita masih nggak sekelas, tapi setidaknya sekarang aku bisa lebih sering lihat kamu. Bisa berpapasan di lorong, lihat kamu keluar kelas, atau bahkan cuma sekilas lihat kamu dari kejauhan.</p>
+        <p>Buat orang lain mungkin itu hal kecil.</p>
+        <p>Tapi buat aku, <em>it means a lot.</em></p>
+        <p>Kadang aku bahkan ngerasa lucu sendiri. Setelah selama ini, ternyata cuma lihat kamu lewat beberapa detik aja masih bisa bikin mood aku jadi lebih baik.</p>
+        <p>Dan selama bertahun-tahun itu, makin banyak hal tentang kamu yang aku suka.</p>
+        <p>Aku suka rambut panjang kamu. Aku suka gimana rambut itu jadi salah satu hal yang menurutku paling khas dari kamu.</p>
+        <p>Aku suka paras kamu yang manis dan imut. Ada sesuatu dari wajah kamu yang selalu bikin aku tanpa sadar pengen lihat lebih lama.</p>
+        <p>Aku suka tingkah kamu yang kadang lucu. Bahkan hal-hal kecil yang mungkin kamu lakuin tanpa sadar bisa jadi sesuatu yang aku ingat.</p>
+        <p>Aku suka suara kamu. Ada kesan imut dan lembut yang menurutku khas banget. Suara yang mungkin buat kamu biasa aja, tapi entah kenapa buat aku selalu menyenangkan buat didengar.</p>
+        <p>Aku juga suka sifat kamu yang ramah sama orang lain. Cara kamu ngobrol, cara kamu memperlakukan orang, dan gimana kamu bisa bikin suasana jadi lebih nyaman.</p>
+        <p>Tapi kalau ditanya sebenarnya apa yang paling aku suka dari kamu...</p>
+        <p>Mungkin jawabannya hampir semuanya.</p>
+        <p>Bukan cuma rambut, wajah, suara, atau senyum kamu. Aku suka cara kamu jadi diri kamu sendiri. Aku suka hal-hal kecil tentang kamu yang mungkin bahkan nggak pernah kamu sadari.</p>
+        <p><em>I like the little things about you.</em></p>
+        <p>Dan mungkin itu juga alasan kenapa sampai sekarang aku masih belum bisa benar-benar melupakan kamu.</p>
+        <p>Aku nggak tahu nanti kita bakal kembali sedekat dulu atau nggak. Aku juga nggak tahu perasaan yang selama ini aku simpan bakal berakhir jadi apa.</p>
+        <p>Aku nggak mau maksa apa pun.</p>
+        <p>Aku cuma pengen kamu tahu kalau selama ini ada seseorang yang diam-diam masih mengagumi kamu. Seseorang yang mungkin kelihatan biasa aja pas berpapasan sama kamu, tapi sebenarnya punya banyak hal yang nggak pernah dia ucapin.</p>
+        <p>Kalau selama ini aku kelihatan kayak nggak peduli, sebenarnya mungkin justru sebaliknya.</p>
+        <p>Aku terlalu peduli sampai takut melakukan sesuatu yang bisa bikin semuanya berubah.</p>
+        <p>Lucu ya?</p>
+        <p>Seseorang yang dulu pernah dekat sama kita, sekarang malah jadi seseorang yang cuma bisa kita rindukan dari jauh.</p>
+        <p>Tapi ya... mungkin memang begitu ceritanya.</p>
+        <p>Aku masih suka kamu.</p>
+        <p>Masih dari kelas 7.</p>
+        <p>Masih sampai sekarang.</p>
+        <p>Dan setelah semua waktu yang udah lewat, ternyata nama kamu masih tetap punya tempat kecil di pikiranku.</p>
+        <p>Jadi kalau suatu hari kamu pernah bertanya-tanya apakah masih ada seseorang yang mengingat masa-masa kita dulu...</p>
+        <p><em>Yes, there is.</em></p>
+        <p><em>and that's me.</em></p>
+      </article>
+    </section>
+
+    <!-- HOW I DESCRIBE YOU -->
+    <section class="section describe-section">
+      <p class="eyebrow">FROM MY EYES TO YOU</p>
+      <h2>How I Describe You,<br><em>Wandira</em></h2>
+
+      <div class="describe-card">
+        <span class="card-number">01</span>
+        <h3>Tentang Parasmu</h3>
+        <p>Kalau ngomongin kamu, jujur aku nggak tahu harus mulai dari mana. Menurutku kamu itu cantik dengan cara kamu sendiri. Ada sisi imut dan lucu yang bikin kamu kelihatan semakin menarik. Apalagi kamu yang nggak terlalu tinggi itu justru punya daya tarik tersendiri menurutku, ada kesan cute yang susah dijelasin.</p>
+        <p>Aku juga suka rambut panjangmu. Entah kenapa, setiap kali lihat kamu dengan rambut panjangmu, rasanya kamu kelihatan makin mempesona. Cara kamu berpakaian juga selalu punya sesuatu yang aku suka. Bukan karena harus selalu kelihatan sempurna, tapi karena apa pun yang kamu pakai terasa cocok aja sama kamu.</p>
+        <p>Mungkin buat orang lain kamu cuma terlihat seperti biasa. Tapi kalau buat aku, ada sesuatu dari parasmu yang selalu bikin aku betah melihat lebih lama.</p>
+      </div>
+
+      <div class="describe-card">
+        <span class="card-number">02</span>
+        <h3>Hal-Hal Kecil yang Ku Suka</h3>
+        <p>Ternyata yang bikin aku suka sama kamu bukan cuma hal-hal besar. Justru banyak hal kecil yang tanpa sadar selalu aku perhatikan.</p>
+        <p>Senyummu yang manis, misalnya. Sesederhana itu, tapi entah kenapa selalu berhasil bikin kamu terlihat lebih cantik.</p>
+        <p>Aku suka tingkahmu yang kadang lucu dan random. Kadang mungkin kamu sendiri nggak sadar kalau hal kecil yang kamu lakukan bisa bikin aku senyum sendiri.</p>
+        <p>Aku suka cara kamu tertawa, cara kamu ngobrol, cara kamu bereaksi terhadap sesuatu, sampai hal-hal kecil seperti ekspresi wajahmu ketika sedang serius atau bercanda.</p>
+        <p>Ada banyak hal tentang kamu yang mungkin kelihatannya sepele, tapi justru itu yang bikin kamu terasa spesial buatku.</p>
+        <p><em>Maybe that's what I like the most about you.</em></p>
+      </div>
+
+      <div class="describe-card">
+        <span class="card-number">03</span>
+        <h3>Sifatmu</h3>
+        <p>Kalau soal sifat, mungkin ini salah satu hal yang paling bikin aku kagum sama kamu.</p>
+        <p>Kamu orangnya ramah. Cara kamu memperlakukan orang lain juga menurutku baik banget. Kamu bisa bersikap nyaman dan menghargai orang lain tanpa harus dibuat-buat. Dari situ aku bisa lihat kalau kamu memang punya hati yang baik.</p>
+        <p>Aku juga suka melihat bagaimana kamu berusaha dalam melakukan sesuatu. Kamu punya sisi pekerja keras yang menurutku keren. Mungkin kamu nggak selalu cerita tentang apa yang sedang kamu perjuangkan, tapi dari caramu menjalani sesuatu, aku bisa melihat kalau kamu bukan orang yang gampang menyerah.</p>
+        <p>Dan satu hal lagi yang aku suka adalah cara kamu bersosialisasi. Kamu bisa membawa diri dengan baik, bisa ngobrol dengan orang lain, dan punya cara sendiri untuk membuat orang di sekitar kamu merasa nyaman.</p>
+        <p>Entah kenapa, semakin aku memperhatikan kamu, semakin aku sadar kalau yang membuat aku kagum bukan cuma karena kamu cantik.</p>
+        <p><em>It's your character.</em></p>
+      </div>
+    </section>
+
+    <!-- PHOTOS -->
+    <section class="section memories-section">
+      <p class="eyebrow">A COLLECTION OF MEMORIES</p>
+      <h2>Our Photo Memories</h2>
+      <p class="subtitle">Setiap gambar menyimpan cerita kecil tentangmu.</p>
+
+      <div class="photo-stack">
+        <button class="polaroid p-left" data-photo="assets/foto1.jpg" data-caption="one of my favorite views of you ♡">
+          <img src="assets/foto1.jpg" alt="Wandira">
+          <span>one of my favorites ♡</span>
+        </button>
+        <button class="polaroid p-right" data-photo="assets/foto2.jpg" data-caption="a little memory I still remember">
+          <img src="assets/foto2.jpg" alt="Wandira">
+          <span>a little memory ✿</span>
+        </button>
+        <button class="polaroid p-center" data-photo="assets/foto3.jpg" data-caption="somehow, you always look beautiful">
+          <img src="assets/foto3.jpg" alt="Wandira">
+          <span>you look beautiful ♡</span>
+        </button>
+      </div>
+    </section>
+
+    <!-- PHOTO MODAL -->
+    <div id="photoModal" class="photo-modal hidden">
+      <button id="closePhoto" class="close-btn">×</button>
+      <div class="photo-modal-card">
+        <img id="modalPhoto" src="" alt="">
+        <p id="modalCaption"></p>
+      </div>
+    </div>
+
+    <!-- OUR STORY -->
+    <section class="section story-section">
+      <p class="eyebrow">THE CHAPTERS I REMEMBER</p>
+      <h2>Our Story</h2>
+
+      <article class="story-card">
+        <span>CHAPTER 01</span>
+        <h3>How I See You</h3>
+        <p>Kamu itu cantik, imut, lucu, dan punya banyak hal kecil yang membuatmu terasa berbeda. Tapi semakin aku mengenalmu, semakin aku sadar bahwa yang membuatku kagum bukan hanya parasmu. Ada cara kamu memperlakukan orang, cara kamu tertawa, cara kamu berbicara, dan cara kamu menjadi dirimu sendiri.</p>
+      </article>
+
+      <article class="story-card">
+        <span>CHAPTER 02</span>
+        <h3>The Little Things</h3>
+        <p>Sometimes it's not the big moments. It's the tiny things I remember: your smile, your laugh, your voice, your expressions, the way you dress, and the little things you probably don't even realize I notice.</p>
+      </article>
+
+      <article class="story-card">
+        <span>CHAPTER 03</span>
+        <h3>Still Here</h3>
+        <p>Years passed, classes changed, and we became less close than we used to be. But somehow, the feeling never completely disappeared. Maybe that's why I still miss you. Maybe that's why your name still has a quiet little place in my mind.</p>
+      </article>
+    </section>
+
+    <!-- JAR -->
+    <section class="section jar-section">
+      <p class="eyebrow">FROM MY HEART TO YOU</p>
+      <h2>Reasons I'm Grateful<br>To Know You</h2>
+      <p class="subtitle">Kocok toplesnya untuk menemukan satu pesan kecil ✉️</p>
+
+      <button id="jar" class="jar" aria-label="Kocok toples">
+        <div class="jar-lid"></div>
+        <div class="jar-body">
+          <span class="note n1"></span><span class="note n2"></span><span class="note n3"></span>
+          <span class="note n4"></span><span class="note n5"></span>
+        </div>
+      </button>
+
+      <button id="shakeJar" class="pink-button jar-button">🫙 Kocok toplesnya</button>
+      <div id="jarMessage" class="jar-message hidden"></div>
+    </section>
+
+    <!-- PLAYLIST -->
+    <section class="section playlist-section">
+      <p class="eyebrow">SONGS THAT REMIND ME OF YOU</p>
+      <h2>Our Playlist</h2>
+
+      <div class="player glass">
+        <p class="now-playing">NOW PLAYING</p>
+        <div id="albumArt" class="album-art">🌷</div>
+        <h3 id="songTitle">Song One</h3>
+        <p id="songArtist">Artist</p>
+
+        <div class="progress-wrap">
+          <input id="progress" type="range" min="0" max="100" value="0">
+          <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
+        </div>
+
+        <div class="player-controls">
+          <button id="prevSong">⏮</button>
+          <button id="playPause" class="play">▶</button>
+          <button id="nextSong">⏭</button>
+        </div>
+
+        <div id="playlist" class="playlist"></div>
+      </div>
+
+      <button id="musicFloat" class="music-float">♫</button>
+      <audio id="audio" preload="metadata"></audio>
+    </section>
+
+    <!-- END -->
+    <section class="section ending-section">
+      <p class="eyebrow">WITH ALL MY HEART</p>
+      <div class="end-flowers">🌸 🌼 🌷</div>
+      <h2>Thank You,<br><em>for everything.</em></h2>
+      <div class="divider"></div>
+      <p>Halaman ini hanyalah cara kecil untuk menunjukkan bahwa masih ada seseorang yang mengingatmu, merindukanmu, dan berharap kamu selalu baik-baik saja.</p>
+      <p>Semoga suatu hari nanti, kalau kamu mengingatku, kamu juga mengingat semua hal baik yang pernah kita punya.</p>
+      <p class="signature">Always wishing you well, Wandira ♡</p>
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
