@@ -283,33 +283,85 @@
     </section>
 
     <!-- PLAYLIST -->
-    <section class="section playlist-section">
-      <p class="eyebrow">SONGS THAT REMIND ME OF YOU</p>
-      <h2>Our Playlist</h2>
+<section class="section playlist-section">
 
-      <div class="player glass">
-        <p class="now-playing">NOW PLAYING</p>
-        <div id="albumArt" class="album-art">🌷</div>
-        <h3 id="songTitle">Song One</h3>
-        <p id="songArtist">Artist</p>
+  <p class="eyebrow">SONGS THAT REMIND ME OF YOU</p>
 
-        <div class="progress-wrap">
-          <input id="progress" type="range" min="0" max="100" value="0">
-          <div class="time-row"><span id="currentTime">0:00</span><span id="duration">0:00</span></div>
-        </div>
+  <h2>Our Playlist</h2>
 
-        <div class="player-controls">
-          <button id="prevSong">⏮</button>
-          <button id="playPause" class="play">▶</button>
-          <button id="nextSong">⏭</button>
-        </div>
+  <p class="playlist-subtitle">
+    Three songs that somehow remind me of you. 🎧
+  </p>
 
-        <div id="playlist" class="playlist"></div>
+  <div class="player glass">
+
+    <p class="now-playing">NOW PLAYING</p>
+
+    <div id="albumArt" class="album-art">
+      ♫
+    </div>
+
+    <h3 id="songTitle">Song Title</h3>
+
+    <p id="songArtist">Artist Name</p>
+
+    <div class="progress-wrap">
+
+      <input
+        id="progress"
+        type="range"
+        min="0"
+        max="100"
+        value="0"
+      >
+
+      <div class="time-row">
+        <span id="currentTime">0:00</span>
+        <span id="duration">0:00</span>
       </div>
 
-      <button id="musicFloat" class="music-float">♫</button>
-      <audio id="audio" preload="metadata"></audio>
-    </section>
+    </div>
+
+    <div class="player-controls">
+
+      <button id="prevSong" type="button">
+        ⏮
+      </button>
+
+      <button
+        id="playSong"
+        class="play"
+        type="button">
+        ▶
+      </button>
+
+      <button id="nextSong" type="button">
+        ⏭
+      </button>
+
+    </div>
+
+    <p id="songCounter" class="song-counter">
+      01 / 03
+    </p>
+
+    <div id="playlist" class="playlist"></div>
+
+  </div>
+
+  <button
+    id="musicFloat"
+    class="music-float"
+    type="button">
+    ♫
+  </button>
+
+  <audio
+    id="audio"
+    preload="metadata">
+  </audio>
+
+</section>
 
     <!-- END -->
     <section class="section ending-section">
