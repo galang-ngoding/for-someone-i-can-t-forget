@@ -120,3 +120,110 @@ function makePetal(){
  setTimeout(()=>p.remove(),18000);
 }
 function makePetals(){for(let i=0;i<18;i++)setTimeout(makePetal,i*350);setInterval(makePetal,800)}
+
+// =====================================
+// DIGITAL BOUQUET MESSAGE
+// =====================================
+
+const bouquetMessages = [
+  {
+    flower: "🌻",
+    message:
+      "Senyummu seperti bunga matahari, selalu punya cara untuk membawa sedikit cahaya ke hari yang kelabu."
+  },
+
+  {
+    flower: "🌹",
+    message:
+      "Parasmu seperti bunga mawar, indah tanpa perlu banyak alasan untuk dikagumi."
+  },
+
+  {
+    flower: "🪷",
+    message:
+      "Tatapanmu seperti bunga teratai, tenang, lembut, tapi meninggalkan kesan yang dalam."
+  },
+
+  {
+    flower: "🌸",
+    message:
+      "Tawamu seperti bunga sakura, singkat tapi selalu berhasil membuat suasana terasa lebih indah."
+  },
+
+  {
+    flower: "🌷",
+    message:
+      "Hatimu seperti bunga lily, sederhana, tulus, dan punya keindahan yang nggak dibuat-buat."
+  },
+
+  {
+    flower: "🌺",
+    message:
+      "Ada banyak hal kecil tentangmu yang mungkin kamu anggap biasa, tapi entah kenapa selalu berhasil membuatku kagum."
+  }
+];
+
+const bouquetMessage =
+  document.getElementById("bouquetMessage");
+
+const bouquetMessageText =
+  document.getElementById("bouquetMessageText");
+
+const bouquetFlowerIcon =
+  document.getElementById("bouquetFlowerIcon");
+
+const closeBouquetMessage =
+  document.getElementById("closeBouquetMessage");
+
+document
+  .querySelectorAll(".bouquet-flower")
+  .forEach((flower, index) => {
+
+    flower.style.cursor = "pointer";
+
+    flower.addEventListener("click", () => {
+
+      const data =
+        bouquetMessages[index];
+
+      bouquetFlowerIcon.textContent =
+        data.flower;
+
+      bouquetMessageText.textContent =
+        data.message;
+
+      bouquetMessage.classList.remove(
+        "hidden"
+      );
+
+    });
+
+  });
+
+closeBouquetMessage.addEventListener(
+  "click",
+  () => {
+
+    bouquetMessage.classList.add(
+      "hidden"
+    );
+
+  }
+);
+
+bouquetMessage.addEventListener(
+  "click",
+  (event) => {
+
+    if (
+      event.target === bouquetMessage
+    ) {
+
+      bouquetMessage.classList.add(
+        "hidden"
+      );
+
+    }
+
+  }
+);
