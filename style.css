@@ -365,3 +365,81 @@ button{font:inherit;color:inherit;border:0}
   }
 
 }
+
+/* ================================
+   OPENING LETTER - CENTER FIX
+================================ */
+
+.letter-screen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100svh;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Surat yang muncul setelah amplop dibuka */
+.letter-screen .opening-letter {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  width: min(520px, calc(100vw - 36px));
+  max-height: 80svh;
+
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  margin: 0;
+  padding: 32px 28px;
+
+  background: rgba(45, 20, 31, 0.97);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 24px;
+
+  box-shadow: 0 25px 80px rgba(0,0,0,.5);
+
+  z-index: 100;
+
+  text-align: left;
+
+  animation: openingLetterCenter .7s ease forwards;
+}
+
+/* Animasi muncul dari tengah */
+@keyframes openingLetterCenter {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -45%) scale(.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+/* HP */
+@media (max-width: 600px) {
+
+  .letter-screen .opening-letter {
+    width: calc(100vw - 32px);
+    max-height: 82svh;
+
+    padding: 28px 22px;
+
+    left: 50%;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+  }
+
+}
