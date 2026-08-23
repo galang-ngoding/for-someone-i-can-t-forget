@@ -317,3 +317,51 @@ button{font:inherit;color:inherit;border:0}
   }
 
 }
+
+/* =========================================
+   OPENING LETTER - CENTER POSITION
+   ========================================= */
+
+.letter-screen .opening-letter {
+  position: fixed !important;
+  left: 50% !important;
+  top: 50% !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  width: min(520px, 90vw) !important;
+  max-height: 82vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  margin: 0 !important;
+  box-sizing: border-box;
+
+  z-index: 100;
+}
+
+
+/* Tampilan HP */
+@media (max-width: 600px) {
+
+  .letter-screen .opening-letter {
+    width: calc(100vw - 32px) !important;
+    max-width: 420px;
+
+    max-height: 80vh;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    padding: 28px 22px !important;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    box-sizing: border-box;
+  }
+
+}
