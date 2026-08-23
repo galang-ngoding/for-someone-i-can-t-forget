@@ -33,16 +33,71 @@ function checkCode(){
   }
 }
 
-envelope.addEventListener("click",()=>{
-  if(envelope.classList.contains("open"))return;
+// =========================================
+// OPENING LETTER SURPRISE
+// =========================================
+
+envelope.addEventListener("click", () => {
+
+  // Jangan bisa diklik berkali-kali
+  if (envelope.classList.contains("open")) return;
+
+  // Buka envelope
   envelope.classList.add("open");
-  $("#envelopeHint").textContent="A little message, just for you ♡";
-  setTimeout(()=>openingLetter.classList.remove("hidden"),1000);
+
+  // Ubah tulisan di bawah envelope
+  $("#envelopeHint").textContent =
+    "A little message, just for you ♡";
+
+  // Setelah envelope terbuka
+  setTimeout(() => {
+
+    // Sembunyikan envelope
+    envelope.style.display = "none";
+
+    // Sembunyikan tulisan kecil envelope
+    const envelopeWrap =
+      document.querySelector(".envelope-wrap");
+
+    if (envelopeWrap) {
+      envelopeWrap.classList.add("letter-opened");
+    }
+
+    // Tampilkan surat
+    openingLetter.classList.remove("hidden");
+
+    // Pastikan surat berada di tengah layar
+    openingLetter.scrollTop = 0;
+
+  }, 1000);
+
 });
 
-continueButton.addEventListener("click",()=>{
+
+// =========================================
+// CONTINUE → MAIN WEBSITE
+// =========================================
+
+continueButton.addEventListener("click", () => {
+
   letterScreen.classList.add("closing");
-  setTimeout(()=>{letterScreen.classList.add("hidden");mainContent.classList.remove("hidden");window.scrollTo(0,0)},800);
+
+  setTimeout(() => {
+
+    // Tutup opening screen
+    letterScreen.classList.add("hidden");
+
+    // Tampilkan website utama
+    mainContent.classList.remove("hidden");
+
+    // Mulai dari bagian paling atas
+    window.scrollTo({
+      top: 0,
+      behavior: "instant"
+    });
+
+  }, 800);
+
 });
 
 /* flowers */
