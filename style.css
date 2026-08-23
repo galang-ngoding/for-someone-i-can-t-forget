@@ -234,91 +234,86 @@ button{font:inherit;color:inherit;border:0}
   cursor: pointer;
   }
 
-/* =====================================================
-   MOBILE LETTER FIX
-   Surat dibuka di tengah layar
-   ===================================================== */
+/* =========================================
+   FIX SURAT PEMBUKA - MOBILE & DESKTOP
+   ========================================= */
 
+/* Surat yang muncul setelah envelope dibuka */
+.letter-screen .opening-letter {
+  position: fixed !important;
+
+  left: 50% !important;
+  top: 50% !important;
+
+  width: min(520px, 90vw) !important;
+  max-width: 520px !important;
+  max-height: 82vh !important;
+
+  margin: 0 !important;
+
+  transform: translate(-50%, -50%) !important;
+
+  box-sizing: border-box;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  z-index: 100 !important;
+
+  padding: 30px 26px !important;
+
+  background: rgba(255, 248, 244, .98);
+  color: #5e4850;
+
+  border-radius: 22px;
+
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.45);
+
+  -webkit-overflow-scrolling: touch;
+}
+
+
+/* HP */
 @media (max-width: 600px) {
 
-  .paper {
-    position: fixed !important;
+  .letter-screen {
+    padding: 15px !important;
+    overflow: hidden !important;
+  }
 
-    width: 86vw !important;
+  .letter-screen .opening-letter {
+    width: calc(100vw - 32px) !important;
     max-width: 420px !important;
 
-    height: auto !important;
-    max-height: 72vh !important;
+    max-height: 80vh !important;
 
     left: 50% !important;
     top: 50% !important;
 
-    margin: 0 !important;
-
     transform: translate(-50%, -50%) !important;
 
-    overflow-y: auto !important;
-    overflow-x: hidden !important;
+    padding: 28px 22px !important;
 
-    box-sizing: border-box !important;
+    font-size: 15px;
+    line-height: 1.75;
 
-    padding: 30px 24px !important;
-
-    border-radius: 20px !important;
-
-    z-index: 9999 !important;
-
-    /* Supaya teks tidak melebar */
-    word-wrap: break-word !important;
-    overflow-wrap: break-word !important;
+    border-radius: 20px;
   }
 
-  .paper h1,
-  .paper h2,
-  .paper p {
-    max-width: 100% !important;
+  .letter-screen .opening-letter .script {
+    font-size: 34px;
   }
 
-  .paper p {
-    line-height: 1.8 !important;
-  }
+}
 
-     }
 
-/* =========================================
-   FIX SURAT AGAR TENGAH DI HP
-   ========================================= */
+/* HP kecil */
+@media (max-width: 380px) {
 
-@media (max-width: 600px) {
-
-  .letter-section {
-    width: 100%;
-    padding: 40px 16px;
-    overflow: hidden;
-  }
-
-  .letter-section .paper {
-    position: relative !important;
-
-    /* surat berada tepat di tengah */
-    left: auto !important;
-    right: auto !important;
-    top: auto !important;
-    bottom: auto !important;
-
-    width: min(90vw, 420px) !important;
-    max-width: 420px !important;
-
-    margin: 25px auto !important;
-
-    /* jangan geser ke kanan/kiri */
-    transform: none !important;
-
-    /* tinggi surat */
-    max-height: 70vh;
-    overflow-y: auto;
-
-    box-sizing: border-box;
+  .letter-screen .opening-letter {
+    width: calc(100vw - 24px) !important;
+    padding: 24px 18px !important;
+    font-size: 14px;
   }
 
 }
