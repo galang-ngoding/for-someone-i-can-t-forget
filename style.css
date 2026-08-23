@@ -233,3 +233,54 @@ button{font:inherit;color:inherit;border:0}
   font-size: 28px;
   cursor: pointer;
   }
+
+/* =====================================================
+   MOBILE LETTER FIX
+   Surat dibuka di tengah layar
+   ===================================================== */
+
+@media (max-width: 600px) {
+
+  .paper {
+    position: fixed !important;
+
+    width: 86vw !important;
+    max-width: 420px !important;
+
+    height: auto !important;
+    max-height: 72vh !important;
+
+    left: 50% !important;
+    top: 50% !important;
+
+    margin: 0 !important;
+
+    transform: translate(-50%, -50%) !important;
+
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+
+    box-sizing: border-box !important;
+
+    padding: 30px 24px !important;
+
+    border-radius: 20px !important;
+
+    z-index: 9999 !important;
+
+    /* Supaya teks tidak melebar */
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  .paper h1,
+  .paper h2,
+  .paper p {
+    max-width: 100% !important;
+  }
+
+  .paper p {
+    line-height: 1.8 !important;
+  }
+
+     }
