@@ -284,3 +284,41 @@ button{font:inherit;color:inherit;border:0}
   }
 
      }
+
+/* =========================================
+   FIX SURAT AGAR TENGAH DI HP
+   ========================================= */
+
+@media (max-width: 600px) {
+
+  .letter-section {
+    width: 100%;
+    padding: 40px 16px;
+    overflow: hidden;
+  }
+
+  .letter-section .paper {
+    position: relative !important;
+
+    /* surat berada tepat di tengah */
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+
+    width: min(90vw, 420px) !important;
+    max-width: 420px !important;
+
+    margin: 25px auto !important;
+
+    /* jangan geser ke kanan/kiri */
+    transform: none !important;
+
+    /* tinggi surat */
+    max-height: 70vh;
+    overflow-y: auto;
+
+    box-sizing: border-box;
+  }
+
+}
